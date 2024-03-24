@@ -69,6 +69,7 @@
             max-width: 400px;
             margin: 100px auto;
             padding: 20px;
+            text-align: left; /* Align text to the left */
         }
         .close {
             color: #aaa;
@@ -83,6 +84,17 @@
             text-decoration: none;
             cursor: pointer;
         }
+        .donate-button {
+            padding: 10px 20px;
+            background-color: yellow;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        .donate-button:hover {
+            background-color: #ff0;
+        }
     </style>
 </head>
 <body>
@@ -93,7 +105,8 @@
             <input type="submit" value="Find out">
         </form>
         <div id="results" class="results">
-            <span id="bidenPercentage"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span id="trumpPercentage"></span>
+            <p id="bidenPercentage"></p>
+            <p id="trumpPercentage"></p>
         </div>
         <p id="postMessage"></p>
     </div>
@@ -103,11 +116,11 @@
             <span class="close" onclick="closeModal()">&times;</span>
             <h2>Legal Disclaimer</h2>
             <p>This app is for entertainment purposes only and does not provide any factual information. By using this app, you agree that it is purely for amusement and should not be relied upon for any decision-making.</p>
-            <p>If you want to support a developer, please feel free to donate.</p>
-            <button onclick="donate(0.99)">$0.99</button>
-            <button onclick="donate(4.99)">$4.99</button>
-            <button onclick="donate(49.99)">$49.99</button>
-            <button onclick="donate(99.99)">$99.99</button>
+            <p>If you want to support a developer, please feel free to donate:</p>
+            <button class="donate-button" onclick="donate(0.99)">$0.99</button>
+            <button class="donate-button" onclick="donate(4.99)">$4.99</button>
+            <button class="donate-button" onclick="donate(49.99)">$49.99</button>
+            <button class="donate-button" onclick="donate(99.99)">$99.99</button>
         </div>
     </div>
 
@@ -127,7 +140,7 @@
             document.getElementById("bidenPercentage").innerText = "Biden: " + bidenPercentage + "%";
             document.getElementById("trumpPercentage").innerText = "Trump: " + trumpPercentage + "%";
 
-            document.getElementById("results").style.display = "inline";
+            document.getElementById("results").style.display = "block";
             document.getElementById("percentageForm").style.display = "none";
 
             document.getElementById("postMessage").innerHTML = "<br>Now you know what to expect. <br>Post the screenshot on your social networks and test your luck on November 5, 2024.";
